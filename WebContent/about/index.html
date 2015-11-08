@@ -1,0 +1,37 @@
+<style>
+h1, h3 {
+	font-family: "Times New Roman", Times, serif;
+}
+</style>
+<br><br>
+<div class="row" ng-controller="AboutCtrl">
+	<div class="col-md-12 name text-center">
+		<h1>{{ name }}</h1>
+	</div>
+	<div class="col-md-12 email text-right">
+		<span>C<small>ELLPHONE2008</small> <small>AT</small> G<small>MAILDOTCOM</small></span>
+	</div>
+</div>
+<hr>
+<div ng-controller="ContentCtrl">
+	<div class="row" ng-repeat="block in blocks">
+		<div class="col-md-12">
+			<div class="text-center title">
+				<h3>{{ block.title }}</h3>
+			</div>
+		</div>
+		<div class="col-md-10 col-md-offset-1" ng-if="block.type=='param'">
+			<div class="content">
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;{{ block.content }}</p>
+			</div>
+		</div>
+		<div class="col-md-10 col-md-offset-1" ng-if="block.type=='list'">
+			<div class="content">
+				<ul ng-repeat="list in block.lists">
+					<li>{{ list }}</li>
+				</ul>
+			</div>
+		</div>
+		<br><br>
+	</div>
+</div>
